@@ -1,0 +1,126 @@
+*{
+    /* background-color: rgba(32,33,35,var(--tw-bg-opacity)); */
+    font-family: Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;;
+}
+
+body{
+    background-color: rgba(32,33,35,32);
+    color: #fff;
+}
+
+a{
+    color: #fff;
+}
+
+.nav_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .left_button, 
+  .right_button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .left_button:active, 
+  .right_button:active{
+    box-shadow:0 0 5px #fff;
+    transition: background-color 0.1s ease-in;
+  }
+
+  .left-button{
+    padding-left: 20px;
+  }
+
+  .description {
+    font-size: 30px;
+  }
+
+  .customize_button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.customize_button{
+    justify-content: center;
+    border-radius: 20vh;
+    height: 100px;
+    width: 500px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    transition: background-color 0.5s ease-out;
+    position: relative;
+  overflow: hidden;
+}
+  
+.customize_button::before,
+.customize_button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  pointer-events: none;
+  opacity: 0;
+  animation: ripple 1s ease-out;
+}
+
+.customize_button::before {
+  animation-delay: 0.2s;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 1;
+  }
+}
+
+
+.customize_button:active{
+    background-color: #333;
+    color: #fff;
+    box-shadow:0 0 5px #fff;
+    transition: background-color 0.1s ease-in;
+}
+
+.generation_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.generation_container p{
+    margin-right: 10px;
+    
+}
+
+.generation_container::before{
+    content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  
+}
+
+.generation_container p{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
