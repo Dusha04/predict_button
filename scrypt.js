@@ -29,7 +29,7 @@ button.addEventListener('click', function(e) {
 // Получаем ссылку на необходимый элемент DOM
 var wordContainer = document.getElementById("customize_button_container");
 var addWordButton = document.getElementById("customize_button");
-
+var historyContainer = document.getElementById("history_container");
 // Функция для добавления случайного слова из списка
 function addRandomWord() {
   // Получаем случайное слово из списка
@@ -41,6 +41,11 @@ function addRandomWord() {
 
   // Добавляем слово в контейнер
   wordContainer.appendChild(wordSpan);
+  // Добавляем слово в историю
+  var historyItem = document.createElement("span");
+  historyItem.textContent = randomWord;
+  historyContainer.appendChild(historyItem);
+  historyContainer.appendChild(document.createElement("br"));
 }
 
 // Назначаем обработчик события на кнопку
@@ -49,3 +54,11 @@ addWordButton.addEventListener("click", addRandomWord);
 //-------------------------------рандомайзер
 
 
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+//---------------------------------история

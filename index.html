@@ -10,7 +10,7 @@
   <body>
     <header>
       <nav class="nav_top">
-        <a class="left_button description" href="#">History</a>
+        <a class="left_button description"  href="#" onclick="openModal()">History</a>
         <span class="description">This button can predict your future</span>
         <a class="right_button description" href="next_level.html">Next level</a>
       </nav>
@@ -24,6 +24,12 @@
       <div class="generation_container">
         <p class="description">Your role in the next life is:</p>
         <p class="description" id="customize_button_container"> </p>
+      </div>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p id="history_container" class="history"></p>
+        </div>
       </div>
     </main>
     <script src="word_list.js"></script>
