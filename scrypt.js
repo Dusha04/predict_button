@@ -1,5 +1,5 @@
-var button = document.querySelector('.customize_button');
-var audio = new Audio('https://drive.google.com/file/d/1ZvsZWgnJuxDDMJCjWBjYqqBhrxuzgvg8/view?usp=sharing'); // Укажите путь к звуковому файлу
+let button = document.querySelector('.customize_button');
+let audio = new Audio('https://drive.google.com/file/d/1ZvsZWgnJuxDDMJCjWBjYqqBhrxuzgvg8/view?usp=sharing'); // Укажите путь к звуковому файлу
 
 button.addEventListener('click', function() {
   audio.play();
@@ -8,7 +8,7 @@ button.addEventListener('click', function() {
 
 
 
-var button = document.querySelector('.customize_button');
+ button = document.querySelector('.customize_button');
 
 button.addEventListener('click', function(e) {
   // Удалить существующий класс анимации
@@ -23,17 +23,14 @@ button.addEventListener('click', function(e) {
 
 
 
-// Список слов
-// var wordList = ["apple", "banana", "orange", "grape", "lemon"];
-
 // Получаем ссылку на необходимый элемент DOM
-var wordContainer = document.getElementById("customize_button_container");
-var addWordButton = document.getElementById("customize_button");
-
+let wordContainer = document.getElementById("customize_button_container");
+let addWordButton = document.getElementById("customize_button");
+let historyContainer = document.getElementById("history_container");
 // Функция для добавления случайного слова из списка
 function addRandomWord() {
   // Получаем случайное слово из списка
-  var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+  let randomWord = wordList[Math.floor(Math.random() * wordList.length)];
   wordContainer.innerHTML = "";
   // Создаем новый элемент <span> для слова
   var wordSpan = document.createElement("span");
@@ -41,6 +38,11 @@ function addRandomWord() {
 
   // Добавляем слово в контейнер
   wordContainer.appendChild(wordSpan);
+  // Добавляем слово в историю
+  let historyItem = document.createElement("span");
+  historyItem.textContent = randomWord;
+  historyContainer.appendChild(historyItem);
+  historyContainer.appendChild(document.createElement("br"));
 }
 
 // Назначаем обработчик события на кнопку
@@ -49,3 +51,11 @@ addWordButton.addEventListener("click", addRandomWord);
 //-------------------------------рандомайзер
 
 
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+//---------------------------------история
