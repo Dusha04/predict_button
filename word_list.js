@@ -1,4 +1,4 @@
-var  wordList = [
+let  wordList = [
   "Socrates",
   "Plato",
   "Aristotle",
